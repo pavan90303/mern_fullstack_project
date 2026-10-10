@@ -1,0 +1,673 @@
+:root {
+    --bg-1: #fff9f0;
+    --bg-2: #fff0e6;
+    --panel: rgba(255, 255, 255, 0.9);
+    --text: #2d2a26;
+    --muted: #6b6560;
+    --nav: linear-gradient(135deg, #ff6b35, #f7931e, #ffb347);
+    --card-1: #ffecd2;
+    --card-2: #fcb69f;
+    --card-3: #ffeaa7;
+    --accent: #ff6b35;
+    --accent-2: #e17055;
+    --accent-3: #00b894;
+    --border: rgba(255, 107, 53, 0.15);
+    --shadow: 0 18px 45px rgba(255, 107, 53, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    color: var(--text);
+}
+
+nav {
+    background: var(--nav);
+    color: #fff;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(118, 103, 163, 0.2);
+    flex-wrap: wrap;
+}
+
+nav h2 {
+    margin: 0 auto 0 0;
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 22px;
+}
+
+input,
+select {
+    flex: 1 1 180px;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 107, 53, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--text);
+    font-size: 0.98rem;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid rgba(255, 107, 53, 0.22);
+    border-color: rgba(255, 107, 53, 0.5);
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 18px rgba(255, 107, 53, 0.22);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 20px rgba(255, 107, 53, 0.28);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: min(100%, 260px);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.card:nth-child(1) {
+    background: linear-gradient(135deg, var(--card-1), #ffe4c4);
+}
+
+.card:nth-child(2) {
+    background: linear-gradient(135deg, var(--card-2), #ffd4a3);
+}
+
+.card:nth-child(3) {
+    background: linear-gradient(135deg, var(--card-3), #fff3b0);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.card h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0;
+    color: var(--text);
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border);
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    background: transparent;
+    margin-top: 18px;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(87, 71, 109, 0.12);
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white;
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 107, 53, 0.04);
+}
+
+.alert {
+    background: linear-gradient(135deg, #dff7e1, #f3fff6);
+    color: #2d6a45;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(76, 150, 103, 0.2);
+}
+
+.demo {
+    color: var(--muted);
+    margin-top: 20px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.login-box {
+    width: min(90vw, 440px);
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 35px 28px;
+    text-align: center;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.login-box h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 8px;
+    color: #433d64;
+}
+
+.login-box p {
+    margin-top: 0;
+    color: var(--muted);
+}
+
+.login-box form {
+    display: block;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 22px;
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.login-box button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+@media (max-width: 650px) {
+    nav {
+        padding: 16px 18px;
+        gap: 12px;
+    }
+
+    nav h2 {
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 1.4rem;
+    }
+
+    nav a {
+        flex: 1 1 auto;
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    .container {
+        padding: 18px 14px 35px;
+    }
+
+    form {
+        padding: 14px;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        flex-basis: 100%;
+        font-size: 0.95rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .login-box {
+        margin-top: 50px;
+        padding: 26px 18px;
+    }
+
+    .login-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .login-box p {
+        font-size: 0.95rem;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+        margin-top: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-image {
+        height: 200px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    .cta-section {
+        padding: 40px 20px;
+    }
+
+    .cta-button {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .table-wrap {
+        margin-top: 15px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+    }
+
+    .search-filter-bar {
+        flex-direction: column;
+    }
+
+    .search-filter-bar input,
+    .search-filter-bar select {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button,
+    .action-buttons form {
+        width: 100%;
+    }
+
+    .pagination button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Modal improvements for mobile */
+    #editModal > div {
+        width: 95%;
+        padding: 20px;
+    }
+
+    #editModal label {
+        font-size: 0.9rem;
+    }
+
+    #editModal input,
+    #editModal select {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    /* Intro slideshow mobile improvements */
+    .slide h1 {
+        font-size: 1.8rem;
+    }
+
+    .slide p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .slide-icon {
+        font-size: 3rem;
+    }
+
+    .skip-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Loading Page Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 107, 53, 0.2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.loading-dots span {
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: 0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--muted);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Landing Page Styles */
+.landing-page {
+    min-height: 100vh;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(225, 112, 85, 0.1));
+    border-radius: 24px;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.landing-image {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 30px auto;
+    box-shadow: var(--shadow);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+}
+
+/* Search and Filter Styles */
+.search-filter-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search-filter-bar input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-filter-bar select {
+    flex: 0 0 auto;
+    min-width: 150px;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 10px 16px;
+    background: white;
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pagination button:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.pagination button.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Action Buttons in Tables */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-edit {
+    padding: 8px 14px;
+    background: linear-gradient(135deg, var(--accent-3), #00a085);
+    font-size: 0.9rem;
+}
+
+.btn-delete {
+    padding: 8px 14px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    font-size: 0.9rem;
+}
+
+.btn-delete:hover {
+    box-shadow: 0 12px 20px rgba(231, 76, 60, 0.28);
+}
+
+.btn-edit:hover {
+    box-shadow: 0 12px 20px rgba(0, 184, 148, 0.28);
+}
